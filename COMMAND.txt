@@ -1,0 +1,400 @@
+**AWS DATA CENTER COMMANDS**
+
+CORE R4 (Area 0)
+!
+enable secret CISCO
+hostname AWS-CORE-R4
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+
+!
+interface GigabitEthernet0/0
+ ip address 188.23.1.4 255.255.0.0
+ no shut
+
+!
+interface GigabitEthernet0/1
+ ip address 57.20.0.21 255.0.0.0
+no shut
+
+!
+interface GigabitEthernet0/2
+ ip address 10.12.10.1 255.255.255.252
+ no shut
+
+!
+interface FastEthernet0/3/0
+ switchport access vlan 10
+ switchport mode access
+ int vlan 10
+ ip address 99.23.10.10  255.0.0.0
+
+!
+router ospf 1
+ network 57.0.0.0 0.255.255.255 area 0
+ network 99.0.0.0 0.255.255.255 area 0
+ network 188.23.0.0 0.0.255.255 area 0
+ network 10.12.10.0 0.0.0.3 area 0 
+
+ #################################################################
+
+ DIST-R6 
+ !
+ enable secret CISCO
+ hostname AWS-DIST-R6
+ 
+ !
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+ no shut
+
+!
+interface GigabitEthernet0/0
+ ip address 12.12.56.12 255.0.0.0
+ ip ospf 200 area 2
+ duplex half
+ speed 100
+ no shut
+
+!
+interface GigabitEthernet0/2
+ ip address 99.23.10.4 255.0.0.0
+  no shut
+
+!
+interface FastEthernet0/3/0
+ switchport access vlan 20
+ switchport mode access
+ interface Vlan20
+ mac-address 0090.2b59.8c01
+ ip address 81.101.12.1 255.0.0.0
+ no shut
+
+!
+router ospf 200
+ log-adjacency-changes
+ passive-interface Loopback0
+ network 81.0.0.0 0.255.255.255 area 2
+ network 99.0.0.0 0.255.255.255 area 0
+ network 12.12.56.12 0.0.0.3 area 0
+!
+
+###############################################################################
+
+DIST-R7 
+!
+enable secret CISCO
+ hostname AWS-DIST-R7
+
+!
+interface Loopback0
+ ip address 7.7.7.7 255.255.255.255
+ no shut
+
+!
+interface GigabitEthernet0/0
+ ip address 188.23.1.12 255.255.0.0
+ no shut
+
+!
+interface GigabitEthernet0/1
+ ip address 133.20.2.10 255.255.0.0
+ speed 100
+ duplex full 
+ no shut
+
+!
+interface GigabitEthernet0/2
+ ip address 76.12.143.43 255.0.0.0
+ duplex half
+ speed 100
+ no shut
+
+!
+router ospf 200
+ log-adjacency-changes
+ network 188.23.0.0 0.0.255.255 area 0
+ network 133.20.2.8 0.0.0.3 area 0
+ network 76.12.143.40 0.0.0.3 area 0
+
+ #####################################################################################
+
+
+ DIST-R8
+ !
+ enable secret CISCO
+ hostname AWS-DIST-R8
+
+!
+interface Loopback0
+ ip address 8.8.8.8 255.255.255.255
+ no shut
+
+!
+interface GigabitEthernet0/0
+ ip address 57.20.0.1 255.0.0.0
+ no shut
+
+!
+interface GigabitEthernet0/1
+ ip address 121.3.10.9 255.0.0.0
+ no shut
+
+!
+interface GigabitEthernet0/2
+ ip address 43.39.43.32 255.0.0.0
+ no shut
+
+!
+router ospf 100
+ log-adjacency-changes
+ passive-interface Loopback0
+ network 57.0.0.0 0.255.255.255 area 0
+ network 121.0.0.0 0.255.255.255 area 0
+ network 43.0.0.0 0.255.255.255 area 0
+!
+
+#######################################################################################
+
+DIST-R9
+!
+enable secret CISCO
+ hostname AWS-DIST-R9
+
+!
+interface Loopback0
+ ip address 9.9.9.9 255.255.255.255
+ no shut
+
+!
+interface GigabitEthernet0/0
+ ip address 10.12.10.5 255.255.255.252
+ no shut
+
+!
+interface GigabitEthernet0/1
+ ip address 12.2.34.5 255.0.0.0
+ speed 100
+ duplex full 
+ no shut
+
+!
+interface FastEthernet0/3/0
+ switchport access vlan 20
+ switchport mode access
+ interface Vlan20
+ mac-address 0001.c710.0e01
+ ip address 100.3.10.10 255.0.0.0
+ no shut
+
+!
+router ospf 100
+ passive-interface Loopback0
+ network 100.0.0.0 0.255.255.255 area 1
+ network 10.12.10.4 0.0.0.3 area 0
+ network 12.2.34.4 0.0.0.3 area 0
+
+
+ ######################################################################################
+
+ DIST-SW2
+ !
+ enable secret CISCO
+ hostname AWS-DIST-SW2
+
+ !
+ip routing 
+
+!
+interface GigabitEthernet1/0/1
+ no switchport
+ ip address 12.12.56.50 255.0.0.0
+ no shut
+
+!
+int range g1/0/2 - 6
+switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+ no shut
+
+!
+interface Loopback0
+ ip address 21.21.21.21 255.255.255.255
+ no shut
+
+!
+int range g1/0/2- 3
+channel-group 1 mode active
+interface Port-channel1
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+!
+int range g1/0/4 - 5
+channel-group 2 mode active
+interface Port-channel2
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+!
+interface Vlan10
+ mac-address 0002.1751.6b01
+ ip address 50.40.23.3 255.0.0.0
+ standby 10 ip 50.40.23.1
+ standby 10 priority 200
+ standby 10 preempt
+
+!
+interface Vlan20
+ mac-address 0002.1751.6b02
+ ip address 99.101.1.3 255.0.0.0
+ standby 20 ip 99.101.1.1
+ standby 20 priority 200
+ standby 20 preempt
+
+!
+interface Vlan30
+ mac-address 0002.1751.6b03
+ no ip address
+ standby 30 ip 10.0.2.1
+!
+interface Vlan40
+ mac-address 0002.1751.6b04
+ no ip address
+ standby 40 ip 20.20.10.1
+ standby 40 priority 99
+
+!
+interface Vlan50
+ mac-address 0002.1751.6b05
+ no ip address
+ standby 50 ip 190.46.32.1
+ standby 50 priority 99
+
+!
+router ospf 200
+ network 50.40.23.8 0.0.0.3 area 2
+ network 99.101.1.4 0.0.0.3 area 2
+ network 21.21.21.21 0.0.0.0 area 2
+ network 12.12.56.48 0.0.0.3 area 0
+!
+
+#######################################################################################################
+
+DIST-SW1
+ !
+ enable secret CISCO
+ hostname AWS-DIST-SW1
+
+ !
+ip routing 
+
+!
+interface FastEthernet0/1
+ no switchport
+ ip address 133.20.14.4 255.255.0.0
+ no shut
+
+!
+int range f0/1 - 6
+switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+ no shut
+
+!
+interface Loopback0
+ ip address 11.11.11.11 255.255.255.255
+ no shut
+
+!
+int range f0/2 - 3
+channel-group 3 mode active
+interface Port-channel3
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+!
+int range f0/4 - 5
+channel-group 2 mode active
+interface Port-channel2
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+!
+interface Vlan30
+ mac-address 0060.4774.e301
+ ip address 10.0.2.6 255.0.0.0
+ standby 30 ip 10.0.2.1
+ standby 30 priority 200
+ standby 30 preempt
+
+!
+interface Vlan40
+ mac-address 0060.4774.e302
+ ip address 20.20.10.5 255.0.0.0
+ standby 40 ip 20.20.10.1
+ standby 40 priority 200
+ standby 40 preempt
+
+!
+interface Vlan50
+ mac-address 0060.4774.e304
+ ip address 190.46.32.10 255.255.255.0
+ standby 50 ip 190.46.32.1
+ standby 50 priority 200
+ standby 50 preempt
+
+!
+router ospf 200
+ log-adjacency-changes
+ network 133.20.2.4 0.0.0.3 area 0
+ network 10.0.2.0 0.0.0.3 area 2
+ network 20.20.10.4 0.0.0.3 area 2
+ network 190.46.32.12 0.0.0.3 area 2
+ network 11.11.11.11 0.0.0.0 area 2
+
+ #################################################################################################
+
+AC-SW1
+!
+ enable secret CISCO
+ hostname AWS-ACC-SW1
+
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
+spanning-tree extend system-id
+
+!
+int range f0/1, f0/3, f0/5
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+!
+interface FastEthernet0/2
+ switchport access vlan 30
+ switchport mode access
+
+!
+interface FastEthernet0/4
+ switchport access vlan 40
+ switchport mode access
+
+!
+int range f0/1 - f0/3
+channel-group 3 mode active
+interface Port-channel3
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 10,20,30,40,50,60,70,80,90,100,110,120,130,140
+ switchport mode trunk
+
+ ####################################################################################################
