@@ -195,3 +195,5 @@ Bradley Giovanni
 Aspiring Network Engineer | CCNA Candidate | NOC ENGINEER | Network Administrator
 
 Focused on Enterprise Networking, NOC Operations, and Infrastructure Design
+
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/bradley-giovanniii293)
