@@ -13,15 +13,15 @@ Rather than a simple connectivity lab, this project focuses on architectural dep
 
 🧠 **Objectives**
 
-Design a scalable enterprise campus and data center network
+✅ Design a scalable enterprise campus and data center network
 
-Implement redundancy at Layer 2 and Layer 3
+✅ Implement redundancy at Layer 2 and Layer 3
 
-Deploy secure dynamic routing using OSPF with authentication
+✅ Deploy secure dynamic routing using OSPF with authentication
 
-Provide inter-VLAN routing using multilayer switches
+✅ Provide inter-VLAN routing using multilayer switches
 
-Ensure high availability using HSRP and EtherChannel
+✅ Ensure high availability using HSRP and EtherChannel
 
 Enable full connectivity between all departments and services
 
