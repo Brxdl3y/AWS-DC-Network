@@ -1,6 +1,6 @@
 **AWS Data Center Network Architecture**
 
-Secure, Scalable & Highly Available Enterprise Network Design (OSPF + HSRP + LACP)
+Secure, Scalable & Highly Available Enterprise Network Design 
 
 **📌 Project Overview**
 
@@ -82,25 +82,25 @@ VLAN networks dynamically integrated into OSPF domain
 
 The network supports 14 enterprise departments mapped into multiple VLAN ranges including:
 
-Infrastructure Engineering
+- Infrastructure Engineering
 
-Cybersecurity
+- Cybersecurity
 
-Reception
+- Reception
 
-Data Center Operations
+- Data Center Operations
 
-Conference & Automation
+- Conference & Automation
 
-AWS DevOps
+- AWS DevOps
 
-Storage & Backup Systems
+- Storage & Backup Systems
 
-Dining & Facilities
+- Dining & Facilities
 
-IoT / Workload Systems
+- IoT / Workload Systems
 
-Global NOC
+- Global NOC
 
 This approach reflects enterprise-grade segmentation and traffic isolation.
 
