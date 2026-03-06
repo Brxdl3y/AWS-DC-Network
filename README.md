@@ -23,9 +23,9 @@ Rather than a simple connectivity lab, this project focuses on architectural dep
 
 ✅ Ensure high availability using HSRP and EtherChannel
 
-Enable full connectivity between all departments and services
+✅ Enable full connectivity between all departments and services
 
-Simulate real-world enterprise networking challenges
+✅ Simulate real-world enterprise networking challenges
 
 
 🏗️ **Network Architecture Design**
