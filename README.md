@@ -108,11 +108,11 @@ This approach reflects enterprise-grade segmentation and traffic isolation.
 
 **HSRP (First Hop Redundancy)**
 
-Active/Standby HSRP configured per VLAN
+✔ Active/Standby HSRP configured per VLAN
 
-Gateway redundancy across paired Distribution L3 switches
+✔ Gateway redundancy across paired Distribution L3 switches
 
-Seamless failover for end-user network continuity
+✔ Seamless failover for end-user network continuity
 
 **EtherChannel (LACP)**
 
