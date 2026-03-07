@@ -172,9 +172,9 @@ Authentication mismatches in routing domains
 
 Route advertisement across hierarchical boundaries
 
-The complexity of the environment strengthened practical skills in network diagnostics, protocol behavior analysis, enterprise-scale configuration management and systematic problem solving — essential competencies for production network environments.
+The complexity of the environment strengthened my practical skills in network diagnostics, protocol behavior analysis, enterprise-scale configuration management and systematic problem solving — essential competencies for production network environments.
 
-Key Outcomes
+**Key Outcomes**
 
 Full end-to-end connectivity across all departments
 
