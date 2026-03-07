@@ -176,17 +176,17 @@ The complexity of the environment strengthened my practical skills in network di
 
 **Key Outcomes**
 
-Full end-to-end connectivity across all departments
+✔ Full end-to-end connectivity across all departments
 
-Scalable and modular network architecture
+✔ Scalable and modular network architecture
 
-Secure and authenticated routing domain
+✔ Secure and authenticated routing domain
 
-Fault-tolerant gateway redundancy
+✔ Fault-tolerant gateway redundancy
 
-Optimized bandwidth via link aggregation
+✔ Optimized bandwidth via link aggregation
 
-Enterprise-grade segmentation and routing design
+✔ Enterprise-grade segmentation and routing design
 
 Author
 
