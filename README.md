@@ -188,9 +188,7 @@ The complexity of the environment strengthened my practical skills in network di
 
 ✔ Enterprise-grade segmentation and routing design
 
-Author
-
-Bradley Giovanni
+Author = **Bradley Giovanni**
 
 Aspiring Network Engineer | CCNA Candidate | NOC ENGINEER | Network Administrator
 
