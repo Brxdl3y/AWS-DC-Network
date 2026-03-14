@@ -34,9 +34,9 @@ Rather than a simple connectivity lab, this project focuses on architectural dep
 
 Core Layer: Central backbone router (R4) acting as OSPF backbone (Area 0)
 
-Distribution Layer: Multiple Layer 3 switches with SVIs, HSRP, and inter-VLAN routing
+🧩Distribution Layer: Multiple Layer 3 switches with SVIs, HSRP, and inter-VLAN routing
 
-Access Layer: Departmental switches connected to end devices
+🧩Access Layer: Departmental switches connected to end devices
 
 Edge Connectivity: Cloud-facing links with IP routing enabled for external reachability
 
@@ -45,13 +45,13 @@ This structure mirrors real enterprise and data center network deployments.
 
 **🌐 Routing & Control Plane Engineering**
 
-Multi-Area OSPF Design
+📍Multi-Area OSPF Design
 
-Area 0 (Backbone) – Core Router (R4)
+📍Area 0 (Backbone) – Core Router (R4)
 
-Area 1 – Right Enterprise Segment
+📍Area 1 – Right Enterprise Segment
 
-Area 2 – Left Enterprise Segment
+📍Area 2 – Left Enterprise Segment
 
 Area 3 – Lower Infrastructure Segment
 
@@ -116,9 +116,9 @@ This approach reflects enterprise-grade segmentation and traffic isolation.
 
 **EtherChannel (LACP)**
 
-LACP (Active/Active) used for aggregated uplinks
+🔹LACP (Active/Active) used for aggregated uplinks
 
-Redundant links between Access and Distribution layers
+🔹Redundant links between Access and Distribution layers
 
 Increased bandwidth + link-level fault tolerance
 
@@ -126,7 +126,7 @@ Increased bandwidth + link-level fault tolerance
 
 Rapid-PVST deployed across L2 and L3 switches
 
-Loop prevention in a multi-path redundant topology
+🟢Loop prevention in a multi-path redundant topology
 
 Optimized convergence for enterprise switching environments
 
@@ -134,17 +134,17 @@ Optimized convergence for enterprise switching environments
 
 MD5 authentication on OSPF routing adjacencies
 
-Secure control-plane communication between routers and L3 switches
+🟢Secure control-plane communication between routers and L3 switches
 
-Segmented VLAN architecture reducing lateral attack surface
+🟢Segmented VLAN architecture reducing lateral attack surface
 
 Structured routing domain with authenticated neighbors
 
 ☁️ **Infrastructure & Cloud Connectivity**
 
-Routed links between Distribution Layer and Routers (Layer 3 links)
+📌Routed links between Distribution Layer and Routers (Layer 3 links)
 
-IP routing enabled on all Layer 3 switches
+📌IP routing enabled on all Layer 3 switches
 
 External cloud-facing connectivity simulated
 
@@ -156,13 +156,13 @@ DHCP relay (IP Helper) implemented for centralized address management (select se
 
 This project required extensive troubleshooting and iterative design refinement, particularly in:
 
-Multi-area OSPF adjacency formation
+🔷Multi-area OSPF adjacency formation
 
-Layer-2 loop prevention with redundant paths
+🔷Layer-2 loop prevention with redundant paths
 
-Route propagation across segmented OSPF areas
+🔷Route propagation across segmented OSPF areas
 
-Control-plane authentication and adjacency validation
+🔷Control-plane authentication and adjacency validation
 
 HSRP synchronization across distribution switches
 
