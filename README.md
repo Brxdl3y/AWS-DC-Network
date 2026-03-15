@@ -53,15 +53,15 @@ This structure mirrors real enterprise and data center network deployments.
 
 📍Area 2 – Left Enterprise Segment
 
-Area 3 – Lower Infrastructure Segment
+📍Area 3 – Lower Infrastructure Segment
 
-OSPF + Static Route Redistribution for flexible route propagation
+📍OSPF + Static Route Redistribution for flexible route propagation
 
-All VLAN networks advertised into OSPF for full Layer 3 reachability
+📍All VLAN networks advertised into OSPF for full Layer 3 reachability
 
-Loopbacks configured on routers and L3 switches for stable router IDs
+📍Loopbacks configured on routers and L3 switches for stable router IDs
 
-MD5 authentication enabled on OSPF adjacencies for routing security
+📍MD5 authentication enabled on OSPF adjacencies for routing security
 
 This design enhances scalability, network isolation, reduces LSA flooding, and improves convergence speed in large topologies. 
 
