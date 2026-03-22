@@ -146,11 +146,11 @@ Structured routing domain with authenticated neighbors
 
 📌IP routing enabled on all Layer 3 switches
 
-External cloud-facing connectivity simulated
+📌External cloud-facing connectivity simulated
 
-Static route redistribution to maintain hybrid routing logic
+📌Static route redistribution to maintain hybrid routing logic
 
-DHCP relay (IP Helper) implemented for centralized address management (select segments)
+📌DHCP relay (IP Helper) implemented for centralized address management (select segments)
 
 **Challenges & Engineering Experience**
 
@@ -164,13 +164,13 @@ This project required extensive troubleshooting and iterative design refinement,
 
 🔷Control-plane authentication and adjacency validation
 
-HSRP synchronization across distribution switches
+🔷HSRP synchronization across distribution switches
 
-VLAN propagation and trunk consistency
+🔷VLAN propagation and trunk consistency
 
-Authentication mismatches in routing domains
+🔷Authentication mismatches in routing domains
 
-Route advertisement across hierarchical boundaries
+🔷Route advertisement across hierarchical boundaries
 
 The complexity of the environment strengthened my practical skills in network diagnostics, protocol behavior analysis, enterprise-scale configuration management and systematic problem solving — essential competencies for production network environments.
 
