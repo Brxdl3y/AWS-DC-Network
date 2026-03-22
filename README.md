@@ -38,9 +38,9 @@ Core Layer: Central backbone router (R4) acting as OSPF backbone (Area 0)
 
 🧩Access Layer: Departmental switches connected to end devices
 
-Edge Connectivity: Cloud-facing links with IP routing enabled for external reachability
+🧩Edge Connectivity: Cloud-facing links with IP routing enabled for external reachability
 
-This structure mirrors real enterprise and data center network deployments.
+🧩This structure mirrors real enterprise and data center network deployments.
 
 
 **🌐 Routing & Control Plane Engineering**
@@ -120,7 +120,7 @@ This approach reflects enterprise-grade segmentation and traffic isolation.
 
 🔹Redundant links between Access and Distribution layers
 
-Increased bandwidth + link-level fault tolerance
+🔹Increased bandwidth + link-level fault tolerance
 
 **Spanning Tree Optimization***
 
